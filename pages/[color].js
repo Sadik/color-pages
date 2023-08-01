@@ -6,6 +6,12 @@ export default function Color({ color }) {
   </div>
 }
 
+export async function getServerSideProps( { params }) {
+  let color = params.color
+  return { props: { color }}
+}
+
+/*
 export async function getStaticProps({ params }) {
   const color = colors.find(color => color.name === params.color)
   return { props: { color } }
@@ -18,3 +24,4 @@ export async function getStaticPaths() {
 
   return { paths, fallback: false }
 }
+ */
